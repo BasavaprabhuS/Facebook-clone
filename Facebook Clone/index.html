@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Home page</title>
+    <style>
+        body{
+            overflow-x: hidden;
+            margin: 0px;
+        }
+        #d1{
+            position: relative;
+            display: flow-root;
+            background-color: #f0f2f5;
+        }
+        .d1_child{
+            float: left;
+            height: 700px;
+            width: 50%;
+        }
+        pre{
+            font-family: sans-serif;
+            font-weight: lighter;
+            margin: 0px;
+            margin-left: 30px;
+            margin-top: -30px;
+        }
+        
+        #d1_2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #d1_content1{
+            padding: 20px;
+            margin-left: 90px;
+            margin-top: 150px;
+        }
+        .login{
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            background-color:white;
+            padding: 15px;
+            border: 1px solid #dddfe2;
+            box-shadow: 2px 4px rgba(0, 0, 0, .1);
+            border-radius: 8px;
+            position: relative;
+        }
+        input{
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            outline: 0.5px #dddfe2;
+            color: black;
+        }
+        input[type=password]
+        {
+            margin-top: 0px;
+        }
+        #b1{
+            padding: 0px 16px;
+            border-radius: 6px;
+            line-height: 48px;
+            font-size: 20px;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #1877f2;
+            color: white;
+            border-style: hidden;
+        }
+        #b2{
+            padding: 0px 16px;
+            border-radius: 6px;
+            line-height: 48px;
+            font-size: 20px;
+            width: 50%;
+            align-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #42b72a;
+            color: white;
+            border-style: hidden;
+        }
+        #b2:hover{
+            background-color: #338a21;
+        }
+        ::placeholder{
+            font-size: 16px;
+            color: #90949c;
+        }
+
+        input:focus{
+            outline: 2px solid rgba(0, 0, 255, 0.1);
+            border-top: 1px solid;
+            border-color:dodgerblue;
+        }
+        #p1{
+            width: 100%;
+            color: #1877f2;
+            text-align: center;
+            margin: 0px;
+        }
+        hr{
+            width: 100%;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #dadde1;
+        }
+        #b2div{
+            width: 100%;
+            text-align: center;
+        }
+        #d2{
+            clear: left;
+            background-color: white;
+        }
+        footer{
+            background-color: white;
+        }
+        #sub{
+            width: 100%;
+            text-align: center;
+        }
+        #a1{
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+        }
+        #a1:hover{
+            text-decoration:underline;
+        }
+        #footdiv{
+            display: flow-root;
+            padding: 30px 130px;
+        }
+        .afoo{
+            float: left;
+            font-family: sans-serif;
+            color: #737373;
+            font-size: 12px;
+            text-decoration: none;
+            margin-right: 10px;
+            position: relative;
+        }
+        .afoo1{
+            float: left;
+            font-family: sans-serif;
+            color: #737373;
+            font-size: 12px;
+            text-decoration: none;
+            margin-right: 20px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .foobutton{
+            float: left;
+            font-family: sans-serif;
+            font-size: 16px;
+            padding: 0px 8px;
+            font-weight: bolder;
+            margin-right: 10px;
+            position: relative;
+            border: 1px solid;
+        }
+        .afoo:hover{
+            text-decoration: underline;
+        }
+        .afoo1:hover{
+            text-decoration: underline;
+        }
+        
+        .langdiv{
+            position: absolute;
+            left:auto;
+            top:20px;
+            background-color: black;
+            z-index: 1;
+            color: #cecbcb;
+            font-size: 12px;
+            padding: 5px;
+            white-space: nowrap;
+        }
+        
+        #aspl{
+            font-family: sans-serif;
+            color: #737373;
+            font-size: 12px;
+            text-decoration: none;
+            cursor: auto;
+        }
+        #sub1{
+            display: flow-root;
+        }
+        #passdiv{
+            position: absolute;
+            right: 25px;
+            top:80px;
+            border-radius: 50%;
+        }
+        #passdiv:hover{
+            background-color: #f0f2f5;
+        }
+        #passeye{
+            margin:4px;
+            margin-bottom: 0px;
+        }
+
+        #signup_dummy{
+            display: none;
+            position: fixed;
+            background-color: rgba(255, 255, 255,0.5);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #signup_super_div{
+            display:none;
+            position: absolute;
+            top: 0px;
+            height: 650px;
+            width: 100%;
+        }
+        
+        #signup{
+            position: absolute;
+            top:40px;
+            left: 400px;
+            width: 450px;
+            background-color: white;
+            border-width: 0px 1px 1px 1px;
+            border-radius: 8px;
+            box-shadow: 2px 4px rgba(0, 0, 0, .1);
+            margin-bottom: 200px;
+        }
+        #sd1{
+            display: flow-root;
+        }
+        #sd3{
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .signdiv_child{
+            width: 50%;
+            float: left;
+            position: relative;
+        }
+        #signp{
+            margin: 0px;
+            color: #606770;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        #signh1{
+            margin: 10px 0px 5px 15px;
+        }
+        .sign_two_input{
+            width: 205px;
+            padding: 10px;
+            margin: 10px 5px 0px 15px;
+            box-sizing: border-box;
+            border-top: 1px solid #dddfe2;
+            background-color: #f5f6f7;
+            border-radius: 6px;
+        }
+        #inp{
+            margin-left: 5px;
+        }
+        .sign_one_input{
+            width: 420px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px 15px 0px 15px;
+            border-top: 1px solid #dddfe2;
+            background-color: #f5f6f7;
+            border-radius: 6px;
+        }
+        .sdp{
+            color: #606770;
+            margin-top:3px;
+            margin-left: 15px;
+            margin-bottom: 3px;
+            font-size:smaller;
+            font-weight: 500;
+        }
+        .dob_select{
+            width: 130px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            padding: 10px 5px;
+            margin: 0px 5px 0px 15px;
+        }
+        #month{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        #year{
+            margin-left: 5px;
+            
+        }
+        input[type=radio]{
+            margin: 0px;
+            width: auto;
+            position: absolute;
+            right: 10px;
+            top:13px;
+            outline: 0px;
+        }
+        .radio_div{
+            position: relative;
+            float: left;
+            margin-left: 15px;
+            margin-right: 7px;
+            padding: 10px;
+            width: 130px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        #radio_super_div{
+            display: flow-root;
+            margin-bottom: 15px;
+        }
+        #rd2{
+            margin-left: 7px;
+        }
+        #rd3{
+            margin-left: 7px;
+            margin-right: 15px;
+        }
+        #custom_select{
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            padding: 10px 5px;
+            margin-top: 0px;
+            font-size: 16px;
+        }
+        #text_a{
+            color: #385898;
+            text-decoration: none;
+        }
+        #text_a:hover{
+            text-decoration: underline;
+        }
+        .spacing{
+            margin-bottom: 10px;
+        }
+        #gender_input{
+            margin-bottom: 10px;
+        }
+        #sign_up_btn{
+            padding: 0px 16px;
+            border-radius: 6px;
+            line-height: 32px;
+            font-size: 20px;
+            width: 40%;
+            align-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #00a400;
+            color: white;
+            border-style: hidden;
+        }
+        #sign_up_btn:hover{
+            background-color: #047904;
+            opacity: 0.6;
+        }
+        #sd4_btn{
+            display: block;
+            text-align: center;
+        }
+        .lab{
+            width: 100%;
+        }
+        .sign_two_input:focus{
+            outline: 0px;
+            border-color: #dddfe2;
+        }
+        .sign_one_input:focus{
+            outline: 0px;
+            border-color: #dddfe2;
+        }
+        .img_explainer_div{
+            display: flow-root;
+            position: relative;
+        }
+        .img_describer_div{
+            position: absolute;
+            left: auto;
+            top:20px;
+            background-color: black;
+            z-index: 1;
+            color: #cecbcb;
+            font-size: 12px;
+            padding: 5px;
+            white-space: nowrap;
+        }
+        #spl_sdp{
+            float: left;
+        }
+        .ied_sub{
+            position: relative;
+            float: left;
+            display: inline;
+            margin-top:2px;
+            margin-left: 3px;
+            margin-bottom: 3px;
+        }
+        .text_sdp{
+            color: #606770;
+            margin-top:3px;
+            margin-left: 15px;
+            margin-bottom: 3px;
+            font-size: 11px;
+            margin-right: 15px;
+            font-family: sans-serif;
+        }
+        .warning_sign{
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+        .stray_div{
+            position: relative;
+        }
+        #w5, #w6{
+            position: absolute;
+            top:0px;
+            right:25px;
+        }
+        #testing{
+            background-color: turquoise;
+            color: black;
+        }
+        .info_left{
+            position: absolute;
+            background-color: #b94a48;
+            border-radius: 3px;
+            box-shadow: 1px 1px 5px gray;
+            padding: 10px;
+            color: white;
+            z-index: 1;
+            white-space: nowrap;
+            font-size: 14px;
+            white-space: pre;
+        }
+        .triangle_right{
+            position: absolute;
+            right: 1px;
+            top:8px;
+            z-index: 1;
+            width: 0px;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid #b94a48;
+            border-bottom: 10px solid transparent;
+        }
+        .info_container{
+            display: none;
+            position: absolute;
+            height: 0px;
+        }
+        #ic_1{
+            width: 138px;
+            right: 440px;
+            top: 99px;
+        }
+        
+        #ic_3{
+            top:146px;
+            right:440px;
+            width: 323px;
+        }
+        #ic_4{
+            width: 315px;
+            top: 192px;
+            right: 440px;
+        }
+
+        #ic_2{
+            top: 152px;
+            width: 128px;
+            height: 47px;
+            left : 230px;
+        }
+
+        #ic_5{
+            width: 315px;
+            top:262px;
+            right: 440px;
+        }
+
+        #ic_6{
+            top: 328px;
+            right: 330px;
+            width: 286px;
+        }
+
+        #triangle_up{
+            position: absolute;
+            left: 15px;
+            top: -10px;
+            z-index: 1;
+			height: 0;
+			width: 0;
+			border-bottom: 10px solid #b94a48;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+		}
+        #close_window{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+        #stray_login_div{
+            width: 100%;
+        }
+        #img_div_login{
+            display: none;
+            text-align: center;
+        }
+        #p2{
+            display: none;
+            width: 100%;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        #p3{
+            display: none;
+            width: 100%;
+            margin-top: 0px;
+            font-size: 13px;
+            font-family: sans-serif;
+            color: #f02849;
+        }
+        #p3a{
+            font-weight: bold;
+            color: #f02849;
+        }
+        #p3a:visited{
+            color: red;
+        }
+        #warning{
+            display: none;
+            color: red;
+            position: absolute;
+            top: 75px;
+            right: 25px;
+            z-index: 1;
+            font-size: 24px;
+        }
+        #loading_div{
+            width:10px;
+            height: 10px;
+            margin: auto;
+            border-radius: 50%;
+            border: 5px solid #dddfe2;
+            border-left: 5px solid #90949c;
+            border-top: 5px solid #737373;
+            animation-name: spinning;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes spinning{
+            0% {transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        #loading_container{
+            position: absolute;
+            top:100px;
+            left:200px;
+            background-color: white;
+            padding: 50px 0px;
+            width: 300px;
+        }
+        #fixed_container{
+            display: none;
+            position: fixed;
+            top:0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        #languages_container{
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            box-shadow: 2px 2px rgba(0, 0, 0, .3);
+            width: 60%;
+            margin:auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+        }
+        #languages_content{
+            border: 1px solid #365899;
+            box-sizing: border-box;
+            display: none;
+            height: 800px;
+            background-color: white;
+        }
+        #blue_div{
+            background-color: #6d84b4;
+            color: white;
+            padding: 6px 10px;
+            font-weight: bold;
+        }
+        #subdiv_lang{
+            padding: 10px;
+            display: flow-root;
+        }
+        .subdiv_child{
+            width: 20%;
+            float: left;
+        }
+        .a_gray{
+            font-size: 12px;
+            font-weight: 500;
+            color: #90949c;
+            font-family: sans-serif;
+        }
+        .a_blue{
+            font-size: 12px;
+            font-weight: 500;
+            color: #385898;
+            font-family: sans-serif;
+            display: inline-block;
+        }
+        .a_subd1{
+            font-size: 15px;
+            font-weight: 500;
+            color: #385898;
+            font-family: sans-serif;
+        }
+        #asd1{
+            justify-self: flex-start;
+            color: black;
+            font-weight: bold;
+        }
+        #h_div{
+            margin: 5px 10px;
+            border-bottom: 1px dashed #ccd0d5;
+        }
+        #main_content{
+            display: flow-root;
+        }
+        .sub_main{
+            margin-top: 5px;
+            display: flow-root;
+        }
+
+        #left_sided_div{
+            width: 20%;
+            float: left;
+            padding: 10px 5px 10px 10px;
+            box-sizing: border-box;
+        }
+        #left_sided_div a{
+            margin-top: 10px;
+            display: block;
+        }
+        
+        .right_sided_div{
+            width: 80%;
+            float: left;
+            display: none;
+            padding: 10px 10px 10px 5px;
+            box-sizing: border-box;
+        }
+        .right_sided_div .subdiv_child{
+            display: flow-root;
+            width: 25%;
+            float: left;
+        }
+        #a_en{
+            font-size: 12px;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        #c1{
+            display: flow-root;
+        }
+        #ag_1{
+            text-decoration: underline;
+            font-weight: bold;
+            color: black;
+        }
+        #last_subdiv{
+            width: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: flow-root;
+        }
+        #close_btn{
+            float: right;
+            background-color: #385898;
+            padding: 3px 6px;
+            color: white;
+            font-family: sans-serif;
+        }
+        #fixed_container:hover{
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <div id="d1_1" class="d1_child">
+            <div id="d1_content1">
+                <img src="/fb.svg" width="300">
+                <h2><pre>Facebook helps you connect and share 
+with the people in your life.</pre></h2>
+            </div>
+        </div>
+        <div id="d1_2" class="d1_child">
+            <div id="d1_content2">
+                <div id="img_div_login">
+                    <img src="/fb.svg" width="240">
+                </div>
+                
+                <div class="login" id="logid">
+                    <p id="p2">Log in to Facebook</p>
+                    <span id="warning">
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" placeholder="Email address or phone number" onfocusin="set_border(this,'dodgerblue')" onfocusout="set_border(this,'#dddfe2')">
+                    <p id="p3">The email address or mobile number you entered isn't connected to an account. <a id="p3a" href="#null">Find your account and log in.</a></p>
+                    <input type="password" placeholder="password" oninput="on_input(logid)" onfocusin="set_border(this,'dodgerblue')" onfocusout="set_border(this,'#dddfe2')">
+                    <div style="display: none;" id="passdiv"><img id="passeye" src="/eye_hide.png" alt="" height="20" onclick="HidePassword(logid)"></div>
+                    <button id="b1" onclick="check_fields_login(logid)">Log in</button>
+                    <p id="p1">Forgotten password?</p>
+
+                    <div id="stray_login_div">
+                    <hr>
+                    <div id="b2div">
+                    <button id="b2" onclick="set_up_signup(signup_super_div)">Create an account</button>
+                    </div>
+                    </div>
+                </div>
+                <div id="sub"><p><a id="a1" href="#null1">Create a page</a> for a celebrity, brand or business.</p></div>
+            </div>
+        </div>
+
+        <script>
+            
+            function check_fields_login(x){
+                var flag=0;
+                var p=document.getElementsByClassName("d1_child");
+                var p1=document.getElementById("img_div_login");
+                var p2=document.getElementById("p2");
+                var p3=document.getElementById("passdiv");
+                var p4=document.getElementById("p3");
+                var p5=document.getElementById("warning");
+                var p6=document.getElementById("sub");
+                var a=x.getElementsByTagName("input");
+                var b=document.getElementById("stray_login_div");
+                for(let y=0;y<a.length;y++)
+                {
+                    if(a[y].value=="")
+                    {
+                        flag=1;
+                        break;
+                    }
+                }
+                b.style.display="inline";
+                p[0].style.width="50%";
+                p[1].style.width="50%";
+                p[0].style.display="block";
+                p1.style.display="none";
+                p2.style.display="none";
+                p3.style.top="80px";
+                p4.style.display="none";
+                a[0].style.borderColor="#dddfe2";
+                p5.style.display="none";
+                p6.style.display="inline";
+
+                for(let i=0;i<a.length;i++)
+                {
+                    a[i].style.borderColor="#dddfe2";
+                }
+                
+                if(flag==1)
+                {
+                    b.style.display="none";
+                    p[0].style.width="0%";
+                    p[1].style.width="100%";
+                    p[0].style.display="none";
+                    p1.style.display="block";
+                    p2.style.display="inline";
+                    p3.style.top="172px";
+                    p4.style.display="block";
+                    a[0].style.borderColor="red";
+                    p5.style.display="inline";
+                    p6.style.display="none";
+                }
+                
+            }
+        </script>
+        
+    </div>
+    
+    <footer>
+        <div id="footdiv">
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">English (UK)
+
+            <div style="display: none;" id="dl1" class="langdiv">English</div></a>
+
+            
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">ಕನ್ನಡ
+            <div style="display: none;" id="dl2" class="langdiv">Kannada</div></a>
+
+            
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">اردو
+            <div style="display: none;" id="dl3" class="langdiv">Urdu</div>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">मराठी
+
+            <div style="display: none;" id="dl4" class="langdiv">Marathi</div></a>
+
+            
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">తెలుగు
+
+            <div style="display: none;" id="dl5" class="langdiv">Telugu</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">हिंदी
+
+            <div style="display: none;" id="dl6" class="langdiv">Hindi</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">தமிழ்
+
+            <div style="display: none;" id="dl7" class="langdiv">Tamil</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">മലയാളം
+
+            <div style="display: none;" id="dl8" class="langdiv">Malayalam</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">বাংলা
+
+            <div style="display: none;" id="dl9" class="langdiv">Bengali</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">ગુજરાતી
+
+            <div style="display: none;" id="dl0" class="langdiv">Gujarathi</div></a>
+
+            <a  class="afoo" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">ਪੰਜਾਬੀ
+
+            <div style="display: none;" id="dl11" class="langdiv">Punjabi</div></a>
+            
+            <button class="foobutton" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)" onclick="show_languages()">&#43;<div style="display:none" id="dl12" class="langdiv">Show more languages</div>
+
+            </button>
+            <br>
+            <hr>
+            <div id="sub1">
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Sign Up
+            <div style="display: none;" id="dl2" class="langdiv">Sign up for facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Log in
+            <div style="display: none;" id="dl2" class="langdiv">Log in to Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Messenger
+            <div style="display: none;" id="dl2" class="langdiv">Take a look at Messenger</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Facebook Lite
+            <div style="display: none;" id="dl2" class="langdiv">Facebook Lite for Android</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Video
+            <div style="display: none;" id="dl2" class="langdiv">Browse in Video</div></a>
+            
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Places
+            <div style="display: none;" id="dl2" class="langdiv">Take a look at popular places on Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Games
+            <div style="display: none;" id="dl2" class="langdiv">Check out Facebook games</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Marketplace
+            <div style="display: none;" id="dl2" class="langdiv">Buy and sell on Facebook Marketplace</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Meta pay
+            <div style="display: none;" id="dl2" class="langdiv">Learn more about Meta Pay</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Meta Store
+            <div style="display: none;" id="dl2" class="langdiv">Discover Meta</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Meta Quest
+            <div style="display: none;" id="dl2" class="langdiv">Learn more about Meta Quest</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Instagram <div style="display: none;" id="dl2" class="langdiv">Take a look at Instagram</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Threads
+            <div style="display: none;" id="dl2" class="langdiv">Check out Threads</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Fundraisers
+            <div style="display: none;" id="dl2" class="langdiv">Donate to worthy causes</div></a>
+            
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Services
+            <div style="display: none;" id="dl2" class="langdiv">Browse our Facebook Services Directory</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Voting Information Centre
+            <div style="display: none;" id="dl2" class="langdiv">See the voting Information Centre</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Privacy Policy
+            <div style="display: none;" id="dl2" class="langdiv">Learn how we collect, use and share information to support Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Privacy Centre
+            <div style="display: none;" id="dl2" class="langdiv">Learn how to manage and control your privacy on Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Groups
+            <div style="display: none;" id="dl2" class="langdiv">Explore our groups</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">About <div style="display: none;" id="dl2" class="langdiv">Read our blog, discover the resource centre and find job opportunities</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Create ad 
+            <div style="display: none;" id="dl2" class="langdiv">Advertise on Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Create Page 
+            <div style="display: none;" id="dl2" class="langdiv">Create a Page</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Developers
+            <div style="display: none;" id="dl2" class="langdiv">Develop on our platform</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Careers <div style="display: none;" id="dl2" class="langdiv">Make your next career move to our brilliant company</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Cookies <div style="display: none;" id="dl2" class="langdiv">Learn about cookies and Facebook</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">AdChoices <img src="/adchoices.jpg" alt="" height="10"> 
+            <div style="display: none;" id="dl2" class="langdiv">Learn about AdChoices</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Terms <div style="display: none;" id="dl2" class="langdiv">Review our terms and policies</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Help <div style="display: none;" id="dl2" class="langdiv">Visit our Help Centre</div></a>
+
+            <a  class="afoo1" href="#null2" onmouseover="timeout=setTimeout(magic1,1000,this)" onmouseout="magic2(this,timeout)">Contact uploading and non-users 
+            <div style="display: none;" id="dl2" class="langdiv">Visit our contact uploading and non-users notice</div></a>
+            </div>
+            <br>
+            <a  id="aspl" href="#null2">Meta © 2023</a>
+        </div>
+        <script>
+            /*function magical(x){
+                setTimeout(magic1,1000,x);  //to display information after 1000 mili seconds i.e, 1s
+            }*/
+            function magic1(x){
+                var y= x.getElementsByTagName("div");
+                y[0].style.display="inline";
+            }
+            function magic2(x,timeout){
+                clearTimeout(timeout);
+                var y= x.getElementsByTagName("div");
+                y[0].style.display="none";
+            }
+
+            
+
+            function HidePassword(x){
+                var a=x.getElementsByTagName("input");
+                var c=x.getElementsByTagName("img");
+                if(a[1].type=="text")
+                {
+                    a[1].type="password";
+                    c[0].src="/eye_hide.png";
+                }
+                else{
+                    a[1].type="text";
+                    c[0].src= "/eye_open.png";
+                }
+            }
+
+            function on_input(x){
+                var a=x.getElementsByTagName("div");
+                var b=x.getElementsByTagName("input");
+                if(b[1].value != "")
+                a[0].style.display="inline";
+                else
+                a[0].style.display="none";
+            }
+        </script>
+    </footer>
+
+    <div id="fixed_container">
+    <div id="languages_container">
+        <div id="loading_container">
+            <div id="loading_div"></div>
+        </div>
+        <div id="languages_content">
+            <div id="blue_div">Select your language</div>
+            <div id="subdiv_lang">
+                <div class="subdiv_child">
+                <a class="a_gray">Suggested languages</a>
+                </div>
+                <div class="subdiv_child" id="subdiv_2">
+                <a class="a_subd1" id="asd1">English(UK)<i class="fa fa-check"></i></a>
+                </div>
+                <div class="subdiv_child">
+                <a class="a_subd1">ಕನ್ನಡ</a>
+                </div>
+                <div class="subdiv_child">
+                <a class="a_subd1">‏اردو‏</a>
+                </div>
+                <div class="subdiv_child">
+                <a class="a_subd1">मराठी</a>
+                </div>
+            </div>
+            <div id="h_div"></div>
+            <div id="main_content">
+
+                <div id="left_sided_div">
+                    <a class="a_gray" id="ag_1" onclick="fun(1)">All languages</a>
+                    <a class="a_gray" onclick="fun(2)">Africa and Middle East</a>
+                    <a class="a_gray" onclick="fun(3)">Americas</a>
+                    <a class="a_gray" onclick="fun(4)">Asia-Pacific</a>
+                    <a class="a_gray" onclick="fun(5)">Eastern Europe</a>
+                    <a class="a_gray" onclick="fun(6)">Western Europe</a>
+                </div>
+
+                
+                <div class="right_sided_div" id="c1">
+                <div class="sub_main">
+                <div class="subdiv_child">
+                    <a class="a_blue">Af-Soomaali</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">Galego</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">Slovenščina</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">‏کوردیی ناوەندی‏</a>
+                </div>
+                </div>
+                
+                <div class="sub_main">
+                <div class="subdiv_child">
+                    <a class="a_blue">Afrikaans</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">Guarani</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">Suomi</a>
+                </div>
+                <div class="subdiv_child">
+                    <a class="a_blue">‏ܣܘܪܝܝܐ‏</a>
+                </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Azərbaycan dili</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Hausa</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Svenska</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">नेपाली</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Bahasa Indonesia</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Hrvatski</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Tiếng Việt</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">मराठी</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Bahasa Melayu</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Ikinyarwanda</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Türkçe</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">हिन्दी</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Basa Jawa</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Inuktitut</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Vlaams</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">অসমীয়া</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Bisaya</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Italiano</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Zaza</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">বাংলা</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Bosanski</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Iñupiatun</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Íslenska</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ਪੰਜਾਬੀ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Brezhoneg</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Kiswahili</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Čeština</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ગુજરાતી</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Català</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Kreyòl Ayisyen</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ślōnskŏ gŏdka</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ଓଡ଼ିଆ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Corsu</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Kurdî (Kurmancî)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Ελληνικά</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">தமிழ்</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Cymraeg</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Latviešu</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Беларуская</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">తెలుగు</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Dansk</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Lietuvių</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Български</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ಕನ್ನಡ</a>
+                    </div>
+                </div>
+
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Deutsch</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Magyar</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Македонски</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">മലയാളം</a>
+                    </div>
+                </div>
+
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Eesti</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Malagasy</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Монгол</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">සිංහල</a>
+                    </div>
+                </div>
+
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue" id="a_en">English (UK)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Malti</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Русский</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ภาษาไทย</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">English (US)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Nederlands</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Српски</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ພາສາລາວ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Español</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Norsk (bokmål)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Татарча</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">မြန်မာဘာသာ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Español (España)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Norsk (nynorsk)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Тоҷикӣ</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ქართული</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Euskara</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">O'zbek</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Українська</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">አማርኛ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Filipino</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Polski</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">кыргызча</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ភាសាខ្មែរ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Français (Canada)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Português (Brasil)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Қазақша</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Français (France)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Português (Portugal)</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Հայերեն</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">中文(台灣)</a>
+                    </div>
+                </div>
+
+                
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Frysk</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Română</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">‏עברית‏</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">中文(简体)</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Fula</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Sardu</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">‏اردو‏</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">中文(香港)</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Furlan</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Shona</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">‏العربية‏</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">日本語</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Føroyskt</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Shqip</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">‏فارسی‏</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">日本語(関西)</a>
+                    </div>
+                </div>
+
+                <div class="sub_main">
+                    <div class="subdiv_child">
+                        <a class="a_blue">Gaeilge</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">Slovenčina</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">‏پښتو‏</a>
+                    </div>
+                    <div class="subdiv_child">
+                        <a class="a_blue">한국어</a>
+                    </div>
+                </div>
+
+                </div>
+
+
+                <div class="right_sided_div" id="c2">
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Af-Soomaali</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Kiswahili</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Zaza</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏کوردیی ناوەندی‏</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Afrikaans</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Kurdî (Kurmancî)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏עברית‏</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏ܣܘܪܝܝܐ‏</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Fula</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Malagasy</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏العربية‏</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">አማርኛ</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Hausa</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Shona</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏فارسی‏</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ⵜⴰⵎⴰⵣⵉⵖⵜ</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Ikinyarwanda</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Türkçe</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏پښتو‏</a>
+                        </div>
+                    </div>
+                </div>
+                        
+
+                <div class="right_sided_div" id="c3">
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">English(US)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Français (Canada)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Inuktitut</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Kreyòl Ayisyen</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Español</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Guarani</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Iñupiatun</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Português (Brasil)</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right_sided_div" id="c4">
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Azərbaycan dili</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Тоҷикӣ</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">বাংলা</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ພາສາລາວ</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Bahasa Indonesia</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">кыргызча</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ਪੰਜਾਬੀ</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">မြန်မာဘာသာ</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Bahasa Melayu</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Қазақша</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ગુજરાતી</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ქართული</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Basa Jawa</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Հայերեն</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ଓଡ଼ିଆ</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ភាសាខ្មែរ</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Bisaya</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏اردو‏</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">தமிழ்</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">中文(台灣)</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Filipino</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">‏پښتو‏</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">తెలుగు</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">中文(简体)</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">O'zbek</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">नेपाली</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ಕನ್ನಡ</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">中文(香港)</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Tiếng Việt</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">मराठी</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">മലയാളം</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">日本語</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Монгол</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">हिन्दी</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">සිංහල</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">日本語(関西)</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Татарча</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">অসমীয়া</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ภาษาไทย</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">한국어</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_sided_div" id="c5">
+                    
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Azərbaycan dili</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Slovenčina</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Беларуская</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Українська</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Magyar</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Slovenščina</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Български</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Қазақша</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Polski</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Čeština</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Русский</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Հայերեն</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Română</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ślōnskŏ gŏdka</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Татарча</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">ქართული</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_sided_div" id="c6">
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Bosanski</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Español (España)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Italiano</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Shqip</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Brezhoneg</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Euskara</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Latviešu</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Suomi</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Català</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Français (France)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Lietuvių</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Svenska</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Corsu</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Frysk</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Malti</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Vlaams</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Cymraeg</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Furlan</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Nederlands</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Íslenska</a>
+                        </div>
+                    </div>
+
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Dansk</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Føroyskt</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Norsk (bokmål)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Ελληνικά</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Dansk</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Føroyskt</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Norsk (bokmål)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Ελληνικά</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Deutsch</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Gaeilge</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Norsk (nynorsk)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Македонски</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a class="a_blue">Eesti</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Galego</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Português (Portugal)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Српски</a>
+                        </div>
+                    </div>
+
+                    <div class="sub_main">
+                        <div class="subdiv_child">
+                            <a id="a_en">English (UK)</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Hrvatski</a>
+                        </div>
+                        <div class="subdiv_child">
+                            <a class="a_blue">Sardu</a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div id="last_subdiv">
+                <button id="close_btn" onclick="hide_languages(fixed_container,loading_container,languages_content)">Close</button>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function fun(x){
+            var text="c";
+            text=text+x;
+            var a=document.getElementsByClassName("right_sided_div");
+            for(let y=0;y<a.length;y++)
+            {
+                a[y].style.display="none";
+            }
+            a=document.getElementById(text);
+            a.style.display="flow-root";
+
+            a=document.getElementById("left_sided_div");
+            var b=a.getElementsByClassName("a_gray");
+            for(let y=0;y<b.length;y++)
+            {
+                b[y].style.textDecoration="none";
+                b[y].style.fontWeight="normal";
+                b[y].style.color="#90949c";
+            }
+            b[x-1].style.textDecoration="underline";
+            b[x-1].style.fontWeight="bold";
+            b[x-1].style.color="black";
+        }
+    </script>
+    </div>
+        
+
+    <script>
+        function show_languages(){
+            var x=document.getElementById("languages_container");
+            var x1=document.getElementById("fixed_container");
+            x1.style.display="block";
+            x.style.display="block";
+            document.body.style.overflowY="hidden";
+            x1.style.overflowY="scroll";
+            var y=document.getElementById("loading_container");
+            var z=document.getElementById("languages_content");
+            var b=document.getElementById("testing");
+            var temp=setTimeout(a_task,1000,y,z);
+        }
+
+        function hide_languages(x,y,z){
+            hide_element(x);
+            y.style.display="block";
+            hide_element(z);
+            document.body.style.overflowY="scroll";
+
+            var x=document.getElementById("left_sided_div")
+            var y=x.getElementsByClassName("a_gray");
+            for(let i=0;i<y.length;i++)
+            {
+                y[i].style.textDecoration="none";
+                y[i].style.fontWeight="normal";
+                y[i].style.color="#90949c";
+            }
+            y[0].style.textDecoration="underline";
+            y[0].style.fontWeight="bold";
+            y[0].style.color="black";
+
+            x=document.getElementsByClassName("right_sided_div");
+            for(let i=0;i<x.length;i++)
+            {
+                x[i].style.display="none";
+            }
+            x[0].style.display="block";
+        }
+
+
+        function a_task(y,z){
+            y.style.display="none";
+            z.style.display="block";
+        }
+    </script>
+
+    <div id="signup_dummy">
+    <div id="signup_super_div">
+    <div id="signup">
+        <h1 id="signh1" style="font-family: sans-serif;">Sign Up</h1>
+        <p id="signp">It's quick and easy.</p>
+        <img src="/window.png" alt="" id="close_window" height="30" onclick="clear_div(signup)">
+        <hr>
+        <div id="sd1">
+            <div class="signdiv_child">
+                <div class="stray_div" id="stray_div1">
+                <input class="sign_two_input"  type="text" placeholder="First name" autofocus onfocusin="resetting_element(this,w1,ic_1)" onfocusout="check_if_empty(stray_div1,ic_1)">
+                <script src="https://kit.fontawesome.com/6ff740d43d.js" crossorigin="anonymous"></script>
+                <div class="warning_sign" id="w1" onclick="display_element(ic_1)">
+                    <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+                </div>
+                </div>
+            </div>
+
+            <div class="info_container" id="ic_1">
+                <div id="name_info" class="info_left">What's your name?</div>
+                <div class="triangle_right"></div>
+            </div>
+
+            <div class="signdiv_child">
+                <div class="stray_div" id="stray_div2">
+                <input class="sign_two_input" id="inp" type="text" placeholder="Surname" onfocusout="check_if_empty(stray_div2,ic_2)" onfocusin="resetting_element(this,w2,ic_2)">
+                <div class="warning_sign" id="w2" onclick="display_element(ic_2)">
+                    <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+                </div>
+                </div>
+            </div>
+
+            <div class="info_container" id="ic_2">
+                <div id="triangle_up"></div>
+                <div id="surname_name_info" class="info_left">What's your name?</div>
+            </div>
+
+        </div>
+
+        <div id="sd2">
+            <div class="stray_div" id="stray_div3">
+            <input class="sign_one_input" type="text" oninput="hide_element(w3)" placeholder="Mobile number or email address" onfocusout="check_if_empty(stray_div3,ic_3)" onfocusin="resetting_element(this,w3,ic_3)">
+            <div class="warning_sign" id="w3" onclick="display_element(ic_3)">
+                <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+            </div>
+            </div>
+
+            <div class="info_container" id="ic_3">
+                <div id="mobile_no_info" class="info_left">you'll use this when you log in and if you ever need 
+to reset your password</div>
+                <div class="triangle_right"></div>
+            </div>
+
+            <div class="stray_div" id="stray_div4">
+            <input class="sign_one_input" type="text" oninput="hide_element(w4)" placeholder="New password" onfocusout="check_if_empty(stray_div4,ic_4)" onfocusin="resetting_element(this,w4,ic_4)">
+            <div class="warning_sign" id="w4" onclick="display_element(ic_4)">
+                <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+            </div>
+            </div>
+
+            <div class="info_container" id="ic_4">
+                <div id="name_info" class="info_left">Enter a combination of at least six numbers, letters
+and punctuation marks (such as ! and &).</div>
+                <div class="triangle_right"></div>
+            </div>
+
+        </div>
+
+        <div id="sd3">
+            <div class="img_explainer_div">
+            <p class="sdp" id="spl_sdp">Date of birth</p>
+            <div class="ied_sub" id="ied1">
+            <img src="question.png" alt="" height="10" onmouseover="magic1(ied1)" onmouseout="magic2(ied1)">
+            
+            <div style="display:none;" class="img_describer_div">Click for more information</div></div>
+
+            <div class="warning_sign" id="w5">
+                <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+            </div>
+            </div>
+            
+            <div id="selection_div">
+            <select name="day" id="day" class="dob_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+
+            <select name="month" id="month" class="dob_select"> /* values set according to js getMonth()*/
+                <option value="0">Jan</option>
+                <option value="1">Feb</option>
+                <option value="2">Mar</option>
+                <option value="3">Apr</option>
+                <option value="4">May</option>
+                <option value="5">Jun</option>
+                <option value="6">Jul</option>
+                <option value="7">Aug</option>
+                <option value="8">Sep</option>
+                <option value="9">Oct</option>
+                <option value="10">Nov</option>
+                <option value="11">Dec</option>
+            </select>
+
+            <select class="dob_select" name="year" id="year">
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1998</option>
+                <option value="1996">1998</option>
+                <option value="1995">1998</option>
+                <option value="1994">1998</option>
+                <option value="1993">1998</option>
+            </select>
+
+            <div class="info_container" id="ic_5">
+                <div id="surname_name_info" class="info_left">It looks like you've entered the wrong info. Please 
+make sure that you use your real date of birth.</div>
+                <div class="triangle_right"></div>
+            </div>
+
+            </div>
+
+            <script>
+                
+                var a=new Date;
+
+                set_default(a.getDate(),"day");
+                set_default(a.getMonth(),"month");
+                set_default(a.getFullYear(),"year");
+
+                function set_default(x,y)
+                {
+                    var x1,x2;
+                    x1=document.getElementById(y);
+                    x2=x1.getElementsByTagName("option");
+                    for(let i=0;i<x2.length;i++)
+                    {
+                        if(x2[i].value==x)
+                        {
+                            x2[i].defaultSelected=true;
+                            break;
+                        }
+                    }
+                }
+            </script>
+        </div>
+
+        <div id="sd4">
+            <div class="img_explainer_div">
+                <p class="sdp" id="spl_sdp">Gender</p>
+                <div class="ied_sub" id="ied2">
+                <img src="question.png" alt="" height="10" onmouseover="magic1(ied2)" onmouseout="magic2(ied2)">
+                <div style="display:none;" class="img_describer_div">Click for more information</div>
+                </div>
+                <div class="warning_sign" id="w6">
+                    <i class='fas fa-exclamation-circle' style='color:#b94a48'></i>
+                </div>
+            </div>
+
+            <div id="radio_super_div">
+    
+            <div class="radio_div" id="rd1">
+            <label for="r1">Female</label>
+            <input type="radio" name="gender" id="r1" onclick="hide_element(gender_custom_div)">
+            </div>
+
+            <div class="radio_div" id="rd2">
+                <label for="r2">Male</label>
+                <input type="radio" name="gender" id="r2" onclick="hide_element(gender_custom_div)">
+            </div>
+
+            <div class="radio_div" id="rd3">
+                <label for="r3">Custom</label>
+                <input type="radio" name="gender" id="r3" onclick="display_element(gender_custom_div)">
+            </div>
+
+            <div class="info_container" id="ic_6">
+                <div id="surname_name_info" class="info_left">Please choose a gender. You can change who 
+can see this later.</div>
+                <div class="triangle_right"></div>
+            </div>
+
+            </div>
+
+            <div style="display: none;" id="gender_custom_div">
+            <select class="sign_one_input" name="custom" id="custom_select">
+                <option value="Select your pronoun" disabled selected>Select your pronoun</option>
+                <option value="She: &quot;Wish her a happy birthday! &quot;">She: "Wish her a happy birthday!" </option>
+                <option value="He: &quot;Wish him a happy birthday! &quot;">He: "Wish him a happy birthday!" </option>
+                <option value="They: &quot;Wish them a happy birthday! &quot;">They: "Wish them a happy birthday!" </option>
+            </select>
+            <p class="sdp">Your pronoun is visible to everyone.</p>
+
+            
+
+            <input type="text" id="gender_input" class="sign_one_input" placeholder="Gender (optional)">
+            </div>
+
+            <div id="text_div">
+                <p class="text_sdp">People who use our service may have uploaded your contact information to Facebook. <a id="text_a" href="#null">Learn more.</a></p>
+
+                <div class="spacing"></div>
+
+                <p class="text_sdp">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+
+                <div class="spacing"></div>
+
+                <div id="sd4_btn">
+                <button id="sign_up_btn" onclick="check_fields_signup(sd1)">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+            <script>
+                function display_element(x){
+                    x.style.display="inline";
+                }
+
+                function hide_element(x){
+                    x.style.display="none";
+                }
+
+                function set_border(x,y){
+                    x.style.borderColor=y;
+                }
+
+                function set_up_signup(x){
+                    var z=document.getElementById("signup_dummy");
+                    z.style.display="inline";
+                    x.style.display="inline";
+                    var a=x.getElementsByTagName("input");
+                    a[0].focus(); //auto focus on first input field
+                    document.body.style.overflowY="hidden";
+                    z.style.overflowY="scroll";
+                }
+                
+                function resetting_element(x,y,z)
+                {
+                    var a=y.style.display;
+                    var b=document.getElementById("testing");
+                    x.style.borderColor="#dddfe2";
+                    
+                    if(a=="inline")
+                    {
+                        z.style.display="inline";
+                    }
+                    hide_element(y);
+                }
+
+                function check_if_empty(element,x)
+                {
+                    var a=element.getElementsByTagName("input");
+                    var b=element.getElementsByTagName("div");
+                    
+                    if(a[0].value=="")
+                    {
+                        display_element(b[0]);
+                        a[0].style.borderColor="red";
+                    }
+                    x.style.display="none";
+                }
+
+
+                function check_fields_signup(x){
+                    let text="";
+                    var a,c,d,f;
+                    var c1,d1;
+                    let flag=1;
+                    var fl=0;
+                    let ptype="";//indicates type of prioritirized element(radio/select, NA for input) 
+                    let an_element;      //indicate which item to be autofocussed
+                    let priority=0;     //specify the priority elements for autofocus upon signup error
+                    let r_selected=0;  //for radio buttons border to be set red in case of warning
+                    let s_selected=0; // for select buttons border to be set red in case of warning
+                    var b=document.getElementById("testing");
+                    for(let x=1;x<=4;x++)
+                    {
+                        text="sd"+x;
+                        a=document.getElementById(text);
+                        c=a.getElementsByTagName("input"); /* For input tags */
+                        for(let y=0;y<c.length;y++)    /* checking if input fields are empty*/
+                        {
+                            if(c[y].type != "radio")
+                            {
+                                if(c[y].value=="")
+                                {
+                                    if(flag==1){
+                                    d=a.getElementsByClassName("warning_sign");
+                                    d[y].style.display="inline";
+                                    c[y].style.borderColor="red";
+                                    if(priority==0) //priority not set.. earlier fields are filled
+                                    {
+                                        priority=1; //give priority to the associated element
+                                        an_element=c[y];//says which element has been given priority
+                                    }
+                                }
+                                }
+                            }
+                            else
+                            {
+                                //for radio buttons
+                                flag=0; 
+                                var temp;
+                                f=a.getElementsByClassName("warning_sign");
+                                var ote=document.getElementsByClassName("radio_div");
+                                // start with the assumption that none of the radio buttons are selected
+                                f[0].style.display="inline"; 
+
+                                var w=document.getElementById("ic_6");
+
+
+                                if(priority==0) 
+                                /* as radio buttons are last part(sd4) in signup form, and if priority=0 at this point the only possible candidate to get priority is radio button and can be set to 1. priority should be set to zero if one of the radio buttons are clicked */
+                                {
+                                    priority=1;
+                                    ptype="r"; //prioritirized element is radio
+                                    temp=document.getElementById("radio_super_div");
+                                    an_element=temp;
+                                }
+                                
+                            
+                                for(let p=0;p<ote.length;p++) //set border for radio button inside div
+                                {
+                                    set_border(ote[p],'red');
+                                }
+                    
+
+                                if(c[y].checked== true)
+                                {
+                                    //if a radio button is clicked hide warning
+                                    f[0].style.display="none";
+                                    for(let p=0;p<ote.length;p++)
+                                    {
+                                        set_border(ote[p],'#dddfe2');
+                                    }
+
+                                    r_selected=1; 
+                                    /*set priority=0 if r_selected=1 i.e, a radio button clicked*/
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(r_selected==1 && an_element==temp){
+                            priority=0;  
+                            an_element="";
+                            /*it does not matter even if the priority is not reset as radio buttons are last part of signup(ignoring select and input text of sd4 div). but for the sake of completeness it is reset*/
+                            w.style.display="none";
+                        }
+
+                        c1=a.getElementsByTagName("select"); /*For select tags*/
+                        if(c1.length<3)  //  consider only div with 3 select tags 
+                        continue;
+                        else
+                        {
+                            f=a.getElementsByClassName("warning_sign");
+                            /*start with the assumption that all the select items have been provided input*/
+                            f[0].style.display="none";
+                            
+                            let w=document.getElementById("ic_5");
+
+                            var temp=document.getElementById("selection_div");
+
+                            for(let i=0;i<c1.length;i++)
+                            {
+                                d1=c1[i].getElementsByTagName("option");
+                                set_border(c1[i],'#dddfe2');
+                                var index_seleted=c1[i].selectedIndex;
+                                if(d1[index_seleted].defaultSelected==true)        
+                                {
+                                    /*if atleast one select field is not given input then display warning*/
+                                    f[0].style.display="inline";
+                                    
+                                    for(let p=0;p<c1.length;p++)
+                                    {
+                                        set_border(c1[p],'red');
+                                    }
+
+                                    if(priority==0)
+                                    {
+                                        priority=1;
+                                        ptype="s"; //prioritirized element is select
+                                        an_element=temp;
+                                    }
+                                    break;
+                                }
+                            }
+                            if(f[0].style.display=="none")
+                            {
+                                w.style.display="none";
+                            }
+                        }
+                    }
+                    if(priority==1)
+                    {
+                        if(an_element.tagName=="INPUT")
+                        {
+                            an_element.focus();
+                        }
+
+                        if(an_element.tagName=="DIV")
+                        {
+                            var temp=an_element.getElementsByClassName("info_container");
+                            temp[0].style.display="inline";
+                            if(ptype=="s")
+                            {
+                                var z1=document.getElementById("sd3");
+                                var z2=z1.getElementsByTagName("select");
+                            }
+                            else{
+                                var z1=document.getElementById("sd4");
+                                var z2=z1.getElementsByClassName("radio_div");
+                            }
+                            for(let p=0;p<z2.length;p++)
+                            {
+                                set_border(z2[p],'#dddfe2');
+                            }
+                        }
+                    }
+                }
+
+                function clear_div(x){
+                    
+                    var temp;
+                    var z=document.getElementById("signup_dummy");
+                    z.style.overflowY="hidden";
+                    z.style.display="none";
+                    document.body.style.overflowY="scroll";
+                    //clear warning signs
+
+                    var a=x.getElementsByClassName("warning_sign");
+                    for(let y=0;y<a.length;y++){
+                        if(a[y].style.display=="inline"){
+                            a[y].style.display="none";
+                        }
+                    }
+
+                    //reset the border and values of input elements to default
+                    var i=x.getElementsByTagName("input")
+                    for(let y=0;y<i.length;y++){
+                        
+                        if(i[y].type=="text")  //for text input
+                        {
+                            set_border(i[y],'#dddfe2');
+                            i[y].value="";
+                        }
+
+                        temp=x.getElementsByClassName("radio_div"); //reset radio div border
+
+                        for(let z=0;z<temp.length;z++){
+                            set_border(temp[z],'#dddfe2');
+                        }
+
+                        if(i[y].type=="radio")  //for radio input
+                        {
+                            i[y].checked=false;
+                        }
+                    }
+                    
+                    document.getElementById("ic_5").style.display="none"; //hide warning informations
+                    document.getElementById("ic_6").style.display="none";
+                    
+                    var a=document.getElementById("sd3");
+                    var i=a.getElementsByTagName("select");
+
+                    for(let y=0;y<i.length;y++){
+                        set_border(i[y],'#dddfe2');
+                    }
+
+                    //set deafult date for select fields
+                    var a=new Date;
+
+                    set_default(a.getDate(),"day");
+                    set_default(a.getMonth(),"month");
+                    set_default(a.getFullYear(),"year");
+                    
+                    hide_element(signup_super_div);
+                }
+
+                function set_default(x,y)
+                {
+                    var x1,x2;
+                    x1=document.getElementById(y);
+                    x2=x1.getElementsByTagName("option");
+                    for(let i=0;i<x2.length;i++)
+                    {
+                        if(x2[i].value==x)
+                        {
+                            x2[i].selected=true;
+                            break;
+                        }
+                    }
+                }
+
+            </script>
+    </div>
+    </div>
+    </div>
+</body>
+         
+</html>
